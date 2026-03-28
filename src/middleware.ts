@@ -27,6 +27,7 @@ export async function middleware(request: NextRequest) {
   const isPublic = pathname.startsWith('/login') ||
     pathname.startsWith('/signup') ||
     pathname.startsWith('/invite') ||
+    pathname.startsWith('/auth') ||
     pathname === '/'
 
   if (!user && !isPublic) {

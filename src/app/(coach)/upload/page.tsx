@@ -56,7 +56,7 @@ export default function UploadPage() {
   return (
     <div className="min-h-screen bg-zinc-950">
       <nav className="border-b border-zinc-800 px-6 py-4 flex items-center gap-4">
-        <Link href="/coach/dashboard" className="text-zinc-400 hover:text-white text-sm transition">← Dashboard</Link>
+        <Link href="/dashboard" className="text-zinc-400 hover:text-white text-sm transition">← Dashboard</Link>
         <span className="text-zinc-700">|</span>
         <span className="text-white font-semibold">Upload GPS Data</span>
       </nav>
@@ -118,7 +118,7 @@ export default function UploadPage() {
                 </div>
               </div>
             )}
-            <Link href="/coach/dashboard" className="block text-center text-sm text-white underline mt-2">View dashboard →</Link>
+            <Link href="/dashboard" className="block text-center text-sm text-white underline mt-2">View dashboard →</Link>
           </div>
         )}
       </div>

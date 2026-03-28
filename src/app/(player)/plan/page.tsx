@@ -96,8 +96,8 @@ export default function PlayerPlan() {
           <span className="text-white font-semibold">My Plan</span>
         </div>
         <div className="flex items-center gap-3">
-          <Link href="/player/report" className="text-sm text-zinc-400 hover:text-white transition">My Report</Link>
-          <Link href="/player/survey" className="text-sm bg-white text-black font-semibold px-3 py-1.5 rounded-lg hover:bg-zinc-100 transition">
+          <Link href="/report" className="text-sm text-zinc-400 hover:text-white transition">My Report</Link>
+          <Link href="/survey" className="text-sm bg-white text-black font-semibold px-3 py-1.5 rounded-lg hover:bg-zinc-100 transition">
             Check-in
           </Link>
         </div>
@@ -110,7 +110,7 @@ export default function PlayerPlan() {
             <p className="text-4xl mb-3">📋</p>
             <p className="text-white font-semibold mb-1">No plan generated yet</p>
             <p className="text-zinc-400 text-sm mb-6">Complete your daily check-in so the ARC engine can personalise your training plan.</p>
-            <Link href="/player/survey" className="inline-block bg-white text-black font-semibold px-5 py-2.5 rounded-lg hover:bg-zinc-100 transition text-sm">
+            <Link href="/survey" className="inline-block bg-white text-black font-semibold px-5 py-2.5 rounded-lg hover:bg-zinc-100 transition text-sm">
               Start check-in →
             </Link>
           </div>

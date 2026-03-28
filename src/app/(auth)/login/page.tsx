@@ -27,11 +27,11 @@ export default function LoginPage() {
       const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/me`, {
         headers: { Authorization: `Bearer ${session.access_token}` }
       })
-      if (res.ok) { router.push('/player/report'); return }
+      if (res.ok) { router.push('/report'); return }
     } catch {}
 
     // Otherwise go to coach dashboard
-    router.push('/coach/dashboard')
+    router.push('/dashboard')
   }
 
   return (

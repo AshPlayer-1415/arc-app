@@ -73,8 +73,8 @@ export default function CoachDashboard() {
           <span className="text-white font-semibold">{team?.name || 'ARC'}</span>
         </div>
         <div className="flex items-center gap-3">
-          <Link href="/coach/upload" className="text-sm text-zinc-400 hover:text-white transition">Upload GPS</Link>
-          <Link href="/coach/roster" className="text-sm text-zinc-400 hover:text-white transition">Roster</Link>
+          <Link href="/upload" className="text-sm text-zinc-400 hover:text-white transition">Upload GPS</Link>
+          <Link href="/roster" className="text-sm text-zinc-400 hover:text-white transition">Roster</Link>
           <button onClick={handleRunEngine} disabled={running}
             className="text-sm bg-zinc-800 hover:bg-zinc-700 text-white px-3 py-1.5 rounded-lg transition disabled:opacity-50">
             {running ? 'Running…' : '⚡ Run Engine'}
@@ -119,14 +119,14 @@ export default function CoachDashboard() {
             <p className="text-4xl mb-3">📊</p>
             <p className="font-medium text-white mb-1">No reports yet</p>
             <p className="text-sm">Upload GPS data or wait for players to submit surveys.</p>
-            <Link href="/coach/upload" className="mt-4 inline-block bg-white text-black text-sm font-semibold px-4 py-2 rounded-lg hover:bg-zinc-100 transition">
+            <Link href="/upload" className="mt-4 inline-block bg-white text-black text-sm font-semibold px-4 py-2 rounded-lg hover:bg-zinc-100 transition">
               Upload GPS file
             </Link>
           </div>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {players.map(p => (
-              <Link key={p.player_id} href={`/coach/player/${p.player_id}`}
+              <Link key={p.player_id} href={`/player/${p.player_id}`}
                 className="bg-zinc-900 border border-zinc-800 rounded-xl p-5 hover:border-zinc-600 transition group">
                 <div className="flex items-start justify-between mb-3">
                   <div>

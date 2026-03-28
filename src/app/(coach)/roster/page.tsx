@@ -111,7 +111,7 @@ export default function RosterPage() {
     <div className="min-h-screen bg-zinc-950">
       <nav className="border-b border-zinc-800 px-6 py-4 flex items-center justify-between">
         <div className="flex items-center gap-4">
-          <Link href="/coach/dashboard" className="text-zinc-400 hover:text-white text-sm transition">← Dashboard</Link>
+          <Link href="/dashboard" className="text-zinc-400 hover:text-white text-sm transition">← Dashboard</Link>
           <span className="text-zinc-700">|</span>
           <span className="text-white font-semibold">Roster — {team?.name}</span>
         </div>

@@ -136,7 +136,7 @@ export default function CoachPlayerPage() {
     <div className="min-h-screen bg-zinc-950 flex items-center justify-center">
       <div className="text-center">
         <p className="text-zinc-400 mb-4">Player not found or no report available.</p>
-        <Link href="/coach/dashboard" className="text-white underline text-sm">← Back to dashboard</Link>
+        <Link href="/dashboard" className="text-white underline text-sm">← Back to dashboard</Link>
       </div>
     </div>
   )
@@ -148,7 +148,7 @@ export default function CoachPlayerPage() {
     <div className="min-h-screen bg-zinc-950">
       <nav className="border-b border-zinc-800 px-6 py-4 flex items-center justify-between">
         <div className="flex items-center gap-4">
-          <Link href="/coach/dashboard" className="text-zinc-400 hover:text-white text-sm transition">← Dashboard</Link>
+          <Link href="/dashboard" className="text-zinc-400 hover:text-white text-sm transition">← Dashboard</Link>
           <span className="text-zinc-700">|</span>
           <span className="text-white font-semibold">{p?.first_name} {p?.last_name}</span>
         </div>

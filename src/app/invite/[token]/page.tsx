@@ -40,7 +40,7 @@ export default function InvitePage() {
 
     try {
       await acceptInvite(token, session.access_token)
-      router.push('/player/survey')
+      router.push('/survey')
     } catch (e: unknown) {
       setError(e instanceof Error ? e.message : 'Failed to accept invite')
       setAccepting(false)

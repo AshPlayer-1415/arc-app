@@ -119,8 +119,8 @@ export default function PlayerReport() {
           <span className="text-white font-semibold">My Report</span>
         </div>
         <div className="flex items-center gap-3">
-          <Link href="/player/plan" className="text-sm text-zinc-400 hover:text-white transition">My Plan</Link>
-          <Link href="/player/survey" className="text-sm bg-white text-black font-semibold px-3 py-1.5 rounded-lg hover:bg-zinc-100 transition">
+          <Link href="/plan" className="text-sm text-zinc-400 hover:text-white transition">My Plan</Link>
+          <Link href="/survey" className="text-sm bg-white text-black font-semibold px-3 py-1.5 rounded-lg hover:bg-zinc-100 transition">
             Check-in
           </Link>
         </div>
@@ -164,7 +164,7 @@ export default function PlayerReport() {
             <p className="text-4xl mb-3">📊</p>
             <p className="text-white font-semibold mb-1">No report yet</p>
             <p className="text-zinc-400 text-sm mb-6">Complete your daily check-in to get your first readiness report.</p>
-            <Link href="/player/survey" className="inline-block bg-white text-black font-semibold px-5 py-2.5 rounded-lg hover:bg-zinc-100 transition text-sm">
+            <Link href="/survey" className="inline-block bg-white text-black font-semibold px-5 py-2.5 rounded-lg hover:bg-zinc-100 transition text-sm">
               Start check-in →
             </Link>
           </div>
@@ -229,7 +229,7 @@ export default function PlayerReport() {
             )}
 
             {/* CTA to plan */}
-            <Link href="/player/plan"
+            <Link href="/plan"
               className="block bg-zinc-900 border border-zinc-700 rounded-xl p-5 hover:border-zinc-500 transition group">
               <div className="flex items-center justify-between">
                 <div>

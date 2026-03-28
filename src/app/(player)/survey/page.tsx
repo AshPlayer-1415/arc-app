@@ -111,7 +111,7 @@ export default function SurveyPage() {
         </div>
         <h2 className="text-white font-bold text-xl mb-2">{alreadyDone && !done ? "Today's check-in complete" : "Check-in submitted!"}</h2>
         <p className="text-zinc-400 text-sm mb-6">Your data has been recorded. The ARC engine will factor it into your readiness score.</p>
-        <Link href="/player/report" className="inline-block bg-white text-black font-semibold px-6 py-2.5 rounded-lg hover:bg-zinc-100 transition text-sm">
+        <Link href="/report" className="inline-block bg-white text-black font-semibold px-6 py-2.5 rounded-lg hover:bg-zinc-100 transition text-sm">
           View my report →
         </Link>
       </div>
@@ -127,7 +127,7 @@ export default function SurveyPage() {
           </div>
           <span className="text-white font-semibold">Daily Check-in</span>
         </div>
-        <Link href="/player/report" className="text-zinc-400 hover:text-white text-sm transition">My Report</Link>
+        <Link href="/report" className="text-zinc-400 hover:text-white text-sm transition">My Report</Link>
       </nav>
 
       <div className="max-w-xl mx-auto px-6 py-8">
