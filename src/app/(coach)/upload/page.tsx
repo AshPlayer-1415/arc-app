@@ -80,6 +80,8 @@ export default function UploadPage() {
   // Whoop / wearable
   const [whoopFiles, setWhoopFiles] = useState<File[]>([])
   const [whoopType, setWhoopType] = useState('whoop')
+  const [backendReady, setBackendReady] = useState(false)
+  const [waking, setWaking] = useState(false)
 
   useEffect(() => {
     async function load() {
@@ -92,6 +94,12 @@ export default function UploadPage() {
         headers: { Authorization: `Bearer ${session.access_token}` }
       }).then(r => r.json()).catch(() => [])
       if (Array.isArray(res) && res[0]) setTeamId(res[0].id)
+
+      // Ping backend to wake it up (Render free tier sleeps after 15min)
+      setWaking(true)
+      await fetch(`${process.env.NEXT_PUBLIC_API_URL}/health`).catch(() => {})
+      setBackendReady(true)
+      setWaking(false)
     }
     load()
   }, [])
@@ -158,7 +166,10 @@ export default function UploadPage() {
         })
         if (res.ok) {
           const data = await res.json()
-          aggregate.sessions_created += data.sessions_created || 1
+          aggregate.sessions_created += data.sessions_saved || data.sessions_created || 1
+          if (data.status === 'skipped') {
+            // journal_entries.csv — silently skip, not an error
+          }
         } else {
           const err = await res.json().catch(() => ({}))
           aggregate.errors.push(`${file.name}: ${err.detail || 'Upload failed'}`)
@@ -194,6 +205,14 @@ export default function UploadPage() {
             </button>
           ))}
         </div>
+
+        {/* Backend wake-up indicator */}
+        {waking && (
+          <div className="bg-zinc-800 border border-zinc-700 rounded-lg px-4 py-3 flex items-center gap-3 mb-4">
+            <div className="w-4 h-4 border-2 border-zinc-400/30 border-t-zinc-300 rounded-full animate-spin shrink-0" />
+            <p className="text-zinc-400 text-sm">Waking up the server — takes up to 30 seconds on first use…</p>
+          </div>
+        )}
 
         {error && <div className="bg-red-500/10 border border-red-500/30 rounded-lg px-4 py-3 text-red-400 text-sm mb-4">{error}</div>}
 
