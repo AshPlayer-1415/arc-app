@@ -27,7 +27,16 @@ export default function LoginPage() {
       const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/me`, {
         headers: { Authorization: `Bearer ${session.access_token}` }
       })
-      if (res.ok) { router.push('/report'); return }
+      if (res.ok) {
+        const profile = await res.json()
+        // If player hasn't completed onboarding yet, send them there first
+        if (!profile.profile_completed) {
+          router.push('/onboarding')
+        } else {
+          router.push('/report')
+        }
+        return
+      }
     } catch {}
 
     // Otherwise go to coach dashboard
